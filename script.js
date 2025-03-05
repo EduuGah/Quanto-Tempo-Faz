@@ -39,8 +39,8 @@ window.onclick = function(event) {
     }
 }
 
-const imgSol = '/Datas/imgs/SOL.png'
-const imgLua = '/Datas/imgs/LUA.png'
+const imgSol = 'imgs/SOL.png'
+const imgLua = 'imgs/LUA.png'
 
 let imagem = document.getElementById('img')
 let botaoDark = document.getElementById('buttonDark')
