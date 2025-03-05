@@ -1,0 +1,138 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transition: background-color 0.6s ease;
+}
+
+.escolha {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 100%; 
+    position: relative;
+}
+
+.dia, .mes, .ano{
+    gap: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#diaEscolha, #mesEscolha, #anoEscolha {
+    width: 200px; 
+    padding: 10px; 
+    font-size: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    background-color: #f0f0f0; 
+    color: #333;
+}
+
+#dia, #mes, #ano{
+    font-size: 20px;
+}
+
+.botaoEnviar{
+    padding-top: 30px;
+}
+
+#enviar{
+    background-color: #333;
+    font-size: 25px;
+    color: #f1f1f1;
+    width: 110px;
+    height: 50px;
+    border-radius: 10px;
+
+    border: none;
+    cursor: pointer;
+
+    transition: all 0.4s ease-in-out;
+}
+
+#enviar:hover {
+    font-size: 20px;
+    transform: scale(1.1); 
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    border-radius: 20px;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+}
+
+.close {
+    color: #f1f1f1;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: rgb(255, 48, 48);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    cursor: pointer; 
+}
+
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#deixarDireita{
+    float: right;
+}
+
+.botaoDark {
+    position: fixed; 
+    top: 20px; 
+    left: 20px; 
+    z-index: 1000; 
+}
+
+#buttonDark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer; 
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none;
+}
+
+#img{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    transition: all 0.4s ease-in-out;
+}
