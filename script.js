@@ -13,6 +13,10 @@ let meses = {
     'Dezembro': 11
 };
 
+function ehBissexto(ano) {
+    return (ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0);
+}
+
 let botaoEnviar = document.getElementById('enviar');
 const dataAtual = new Date();
 
@@ -78,9 +82,9 @@ botaoDark.addEventListener('click', () => {
 })
 
 botaoEnviar.addEventListener("click", () => {
-    let diaEscolhido = document.querySelector('#diaEscolha').value;
+    let diaEscolhido = parseInt(document.querySelector('#diaEscolha').value);
     let mesEscolhido = document.querySelector('#mesEscolha').value;
-    let anoEscolhido = document.querySelector('#anoEscolha').value;
+    let anoEscolhido = parseInt(document.querySelector('#anoEscolha').value);
 
     let mesEscolhidoNumero = meses[mesEscolhido]
 
@@ -94,11 +98,14 @@ botaoEnviar.addEventListener("click", () => {
         showCustomAlert('Essa data é no futuro');
         return;
     }
-    if (mesEscolhido == 'Fevereiro' && (diaEscolhido == 30 || 31)){
-        showCustomAlert('Fevereiro nem tem esses dias')
-    }
-    if (mesEscolhido == 'Fevereiro' && diaEscolhido == 29){
-        showCustomAlert('Não pensei suficiente pra adicionar os anos bissextos na conta 🤓☝')
+    if (mesEscolhido == 'Fevereiro') {
+        if (diaEscolhido > 29) {
+            showCustomAlert('Fevereiro nem tem esse dias');
+            return;
+        } else if (diaEscolhido === 29 && !ehBissexto(anoEscolhido)) {
+            showCustomAlert('Esse ano não foi bissexto, então Fevereiro só teve 28 dias.');
+            return;
+        }
     }
 
     let anosPassados = anoAtual - anoEscolhido;
