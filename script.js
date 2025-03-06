@@ -94,6 +94,12 @@ botaoEnviar.addEventListener("click", () => {
         showCustomAlert('Essa data é no futuro');
         return;
     }
+    if (mesEscolhido == 'Fevereiro' && (diaEscolhido == 30 || 31)){
+        showCustomAlert('Fevereiro nem tem esses dias')
+    }
+    if (mesEscolhido == 'Fevereiro' && diaEscolhido == 29){
+        showCustomAlert('Não pensei suficiente pra adicionar os anos bissextos na conta 🤓☝')
+    }
 
     let anosPassados = anoAtual - anoEscolhido;
     let mesesPassados = mesAtual - mesEscolhidoNumero;
